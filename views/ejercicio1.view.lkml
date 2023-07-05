@@ -8,6 +8,7 @@ view: ejercicio1 {
           order by ejercicio asc, mes asc;;
   }
 
+
   measure: count {
     type: count
     drill_fields: [detail*]
