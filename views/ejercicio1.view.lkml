@@ -106,6 +106,7 @@ view: ejercicio1 {
   dimension: sku {
     type: string
     sql: ${TABLE}.sku ;;
+    order_by_field: id_de_producto__ibp_
   }
 
   set: detail {
