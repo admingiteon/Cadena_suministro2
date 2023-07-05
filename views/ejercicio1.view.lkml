@@ -77,14 +77,11 @@ view: ejercicio1 {
   dimension: ejercicio {
     type: number
     sql: ${TABLE}.ejercicio ;;
-
     }
-
 
   dimension: mes {
     type: number
     sql: ${TABLE}.Mes ;;
-
   }
 
   dimension: periodo {
