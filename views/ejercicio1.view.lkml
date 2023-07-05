@@ -88,6 +88,7 @@ view: ejercicio1 {
   dimension: periodo {
     type: string
     sql: ${TABLE}.Periodo ;;
+    order_by_field: periodonum
   }
 
 
