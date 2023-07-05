@@ -90,10 +90,18 @@ view: ejercicio1 {
     sql: ${TABLE}.Periodo ;;
   }
 
+
+  dimension: periodonum {
+    type: string
+    sql: ${TABLE}.PeriodoNum ;;
+  }
+
+
   dimension: mes_des_cor {
     type: string
     sql: ${TABLE}.mes_des_cor ;;
   }
+
 
   set: detail {
     fields: [
@@ -112,6 +120,7 @@ view: ejercicio1 {
         ejercicio,
         mes,
         periodo,
+        periodonum,
         mes_des_cor
     ]
   }
