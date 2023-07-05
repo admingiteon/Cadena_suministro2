@@ -77,20 +77,20 @@ view: ejercicio1 {
   dimension: ejercicio {
     type: number
     sql: ${TABLE}.ejercicio ;;
-    order_by_field: ejercicio
+
     }
 
 
   dimension: mes {
     type: number
     sql: ${TABLE}.Mes ;;
-    order_by_field: mes
+
   }
 
   dimension: periodo {
     type: string
     sql: ${TABLE}.Periodo ;;
-    order_by_field: periodo
+
     }
 
   set: detail {
