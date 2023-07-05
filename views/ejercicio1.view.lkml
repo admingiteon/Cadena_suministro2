@@ -103,6 +103,10 @@ view: ejercicio1 {
     sql: ${TABLE}.mes_des_cor ;;
   }
 
+  dimension: sku {
+    type: string
+    sql: ${TABLE}.sku ;;
+  }
 
   set: detail {
     fields: [
@@ -122,7 +126,8 @@ view: ejercicio1 {
         mes,
         periodo,
         periodonum,
-        mes_des_cor
+        mes_des_cor,
+        sku
     ]
   }
 }
