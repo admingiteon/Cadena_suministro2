@@ -90,26 +90,31 @@ view: ejercicio1 {
   dimension: periodo {
     type: string
     sql: ${TABLE}.Periodo ;;
+  }
 
-    }
+  dimension: mes_des_cor {
+    type: string
+    sql: ${TABLE}.mes_des_cor ;;
+  }
 
   set: detail {
     fields: [
         id_de_sociedad__ibp_,
-  id_de_planta__ibp_,
-  id_de_mercado__ibp_,
-  desc_de_mercado__ibp_,
-  id_de_ubicaci__n__ibp_,
-  id_de_producto__ibp_,
-  mercado_prioritario__ibp_,
-  grupo_de_articulos__dato_maestro_,
-  grupo_de_articulos_externo__dato_maestro_,
-  key_figure__ibp_,
-  fecha,
-  cantidad,
-  ejercicio,
-  mes,
-  periodo
+        id_de_planta__ibp_,
+        id_de_mercado__ibp_,
+        desc_de_mercado__ibp_,
+        id_de_ubicaci__n__ibp_,
+        id_de_producto__ibp_,
+        mercado_prioritario__ibp_,
+        grupo_de_articulos__dato_maestro_,
+        grupo_de_articulos_externo__dato_maestro_,
+        key_figure__ibp_,
+        fecha,
+        cantidad,
+        ejercicio,
+        mes,
+        periodo,
+        mes_des_cor
     ]
   }
 }
