@@ -14,4 +14,3 @@ explore: vw_cadena_suministro_pedidos_venta {}
 
 explore: ejercicio1 {}
 explore: cst_materiales {}
-explore: plan_de_entregas {}
