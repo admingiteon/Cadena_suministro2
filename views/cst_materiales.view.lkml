@@ -3,7 +3,7 @@
 
 view: cst_materiales {
   derived_table: {
-    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cat_materiales_ultima_v` LIMIT 10 ;;
+    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cat_materiales_ultima_v`  ;;
   }
 
   measure: count {
