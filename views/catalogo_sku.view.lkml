@@ -1,6 +1,5 @@
 #X# Conversion failed: failed to parse YAML.  Check for pipes on newlines
 
-
 view: sql_runner_query {
   derived_table: {
     sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cat_materiales` ;;
