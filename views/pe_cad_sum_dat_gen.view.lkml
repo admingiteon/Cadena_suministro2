@@ -3,7 +3,7 @@
 
 view: pe_cad_sum_dat_gen {
   derived_table: {
-    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cadena_suministro_datos_generales` LIMIT 10 ;;
+    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cadena_suministro_datos_generales`   ;;
   }
 
   measure: count {
@@ -190,40 +190,40 @@ view: pe_cad_sum_dat_gen {
   set: detail {
     fields: [
         material,
-	tipo_material,
-	unidad_medida,
-	grupo_articulos,
-	grupo_articulos_externos,
-	texto_breve_material,
-	centro,
-	caract_plan_necesidades,
-	punto_pedido,
-	tamano_lote_min,
-	plazo_entrega,
-	stock_seguridad,
-	stock_seguridad_min,
-	tiempo_tratamiento_entrada_mercancias,
-	valor_redond,
-	indicador_control_precios,
-	precio_medio_variable,
-	precio_estandar,
-	cantidad_base,
-	precio_absorbente,
-	almacen,
-	stock_libre_utilizacion,
-	stock_traslado,
-	stock_control_calidad,
-	stock_bloqueado,
-	contador_conversion_unidad_medida_base,
-	denominador_conversion_unidad_medida_base,
-	num_reserva,
-	pos_reserva,
-	salidad_final,
-	pos_borrada,
-	fecha_necesidad,
-	cantidad_necesaria_tot,
-	unidad_medida_resb,
-	cantidad_tomada_tot
+  tipo_material,
+  unidad_medida,
+  grupo_articulos,
+  grupo_articulos_externos,
+  texto_breve_material,
+  centro,
+  caract_plan_necesidades,
+  punto_pedido,
+  tamano_lote_min,
+  plazo_entrega,
+  stock_seguridad,
+  stock_seguridad_min,
+  tiempo_tratamiento_entrada_mercancias,
+  valor_redond,
+  indicador_control_precios,
+  precio_medio_variable,
+  precio_estandar,
+  cantidad_base,
+  precio_absorbente,
+  almacen,
+  stock_libre_utilizacion,
+  stock_traslado,
+  stock_control_calidad,
+  stock_bloqueado,
+  contador_conversion_unidad_medida_base,
+  denominador_conversion_unidad_medida_base,
+  num_reserva,
+  pos_reserva,
+  salidad_final,
+  pos_borrada,
+  fecha_necesidad,
+  cantidad_necesaria_tot,
+  unidad_medida_resb,
+  cantidad_tomada_tot
     ]
   }
 }
