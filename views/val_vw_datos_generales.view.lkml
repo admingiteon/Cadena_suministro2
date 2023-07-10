@@ -2,6 +2,9 @@
 
 
 view: val_vw_datos_generales {
+  dimension: msteriales {
+    drill_fields: [num_reserva]
+  }
   derived_table: {
     sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cadena_suministro_datos_generales`  ;;
   }
