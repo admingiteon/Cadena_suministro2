@@ -1,7 +1,7 @@
 #X# Conversion failed: failed to parse YAML.  Check for pipes on newlines
 
 
-view: vw_datos_generales_validacion {
+view: val_vw_datos_generales {
   derived_table: {
     sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cadena_suministro_datos_generales` LIMIT 10 ;;
   }
