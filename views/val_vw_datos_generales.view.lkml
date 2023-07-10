@@ -3,7 +3,7 @@
 
 view: val_vw_datos_generales {
   derived_table: {
-    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cadena_suministro_datos_generales` LIMIT 10 ;;
+    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cadena_suministro_datos_generales`  ;;
   }
 
   measure: count {
