@@ -6,9 +6,15 @@ view: val_vw_datos_generales {
     sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cadena_suministro_datos_generales`  ;;
   }
 
+ ## measure: count {
+ ##    type: count
+ ##    drill_fields: [detail*]
+ ## }
+
   measure: count {
-    type: count
-    drill_fields: [detail*]
+    type: count_distinct
+    sql: ${num_reserva} ;;
+    drill_fields: [material]
   }
 
   dimension: material {
