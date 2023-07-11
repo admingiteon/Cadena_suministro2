@@ -15,6 +15,7 @@ explore: vw_cadena_suministro_pedidos_venta {}
 explore: ejercicio1 {}
 explore: cst_materiales {}
 explore: pe_cad_sum_dat_gen {} #Para tablero Plan de entrega corto plazo
-explore: val_vw_cad_sum_alm {} #Para validad la vista de Cadena de suministro almacenes
-explore: val_vw_datos_generales {} #Para validad la vista de Cadena de datos Generales
-explore: val_vw_ordenes_compra {} #Para validad la vista de Ordenes de Compra
+explore: val_vw_cad_sum_alm {} #Para validar la vista de Cadena de suministro almacenes
+explore: val_vw_datos_generales {} #Para validar la vista de Cadena de datos Generales
+explore: val_vw_ordenes_compra {} #Para validar la vista de Ordenes de Compra
+explore: val_vw_recetas_fabricacion{} #Para validarrecetas de fabricación
