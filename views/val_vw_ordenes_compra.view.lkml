@@ -3,7 +3,7 @@
 
 view: val_vw_ordenes_compra {
   derived_table: {
-    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cadena_suministro_ordenes_compra` LIMIT 10 ;;
+    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cadena_suministro_ordenes_compra`  ;;
   }
 
   measure: count {
@@ -101,22 +101,22 @@ view: val_vw_ordenes_compra {
   set: detail {
     fields: [
         num_doc_compras,
-	sociedad,
-	clase_pedido,
-	fecha_creacion_registro,
-	num_cuenta_proveedor,
-	num_pos_doc_compras,
-	num_material,
-	texto_breve,
-	centro,
-	grupo_articulos,
-	plazo_entrega_previsto,
-	unidad_medida_pedido,
-	unidad_medida_base,
-	contador_repartos,
-	fecha_entrega_pos,
-	cant_reparto,
-	cant_entrada_mercancias
+  sociedad,
+  clase_pedido,
+  fecha_creacion_registro,
+  num_cuenta_proveedor,
+  num_pos_doc_compras,
+  num_material,
+  texto_breve,
+  centro,
+  grupo_articulos,
+  plazo_entrega_previsto,
+  unidad_medida_pedido,
+  unidad_medida_base,
+  contador_repartos,
+  fecha_entrega_pos,
+  cant_reparto,
+  cant_entrada_mercancias
     ]
   }
 }
