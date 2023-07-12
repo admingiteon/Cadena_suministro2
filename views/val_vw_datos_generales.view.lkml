@@ -50,6 +50,12 @@ view: val_vw_datos_generales {
     sql: ${TABLE}.texto_breve_material ;;
   }
 
+  dimension: elmaterial {
+    type: string
+    sql: ${TABLE}.texto_breve_material ;;
+
+  }
+
   dimension: centro {
     type: string
     sql: ${TABLE}.centro ;;
