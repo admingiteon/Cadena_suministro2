@@ -187,6 +187,11 @@ view: pe_cad_sum_dat_gen {
     sql: ${TABLE}.cantidad_tomada_tot ;;
   }
 
+  measure: sum_cantidad_tomada_tot {
+    type:  sum
+    sql: ${cantidad_necesaria_tot}/10000 ;;
+  }
+
   set: detail {
     fields: [
         material,
