@@ -20,3 +20,4 @@ explore: val_vw_datos_generales {} #Para validar la vista de Cadena de datos Gen
 explore: val_vw_ordenes_compra {} #Para validar la vista de Ordenes de Compra
 explore: lista_materiales_datos_generales {}
 explore: val_vw_recetas_fabricacion{} #Para validarrecetas de fabricación
+explore: vw_catalogo_materiales {}
