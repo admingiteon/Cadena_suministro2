@@ -3,7 +3,7 @@
 
 view: vw_catalogo_materiales {
   derived_table: {
-    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cat_materiales` LIMIT 10 ;;
+    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cat_materiales`  ;;
   }
 
   measure: count {
@@ -79,18 +79,18 @@ view: vw_catalogo_materiales {
   set: detail {
     fields: [
         numero_material_nivel2,
-	centro_nivel2,
-	alternativa_lista_materiales_nivel2,
-	num_lista_materiales_nivel2,
-	num_nodo_lista_materiales_nivel2,
-	componente_nivel2,
-	cantidad_nivel2,
-	unidad_de_medida_nivel2,
-	version_nivel2,
-	categoria_de_lista_de_materiales_stasnivel2,
-	estatus_general_nivel2,
-	grupo_de_articulos_nivel2,
-	texto_breve_material_nivel2
+  centro_nivel2,
+  alternativa_lista_materiales_nivel2,
+  num_lista_materiales_nivel2,
+  num_nodo_lista_materiales_nivel2,
+  componente_nivel2,
+  cantidad_nivel2,
+  unidad_de_medida_nivel2,
+  version_nivel2,
+  categoria_de_lista_de_materiales_stasnivel2,
+  estatus_general_nivel2,
+  grupo_de_articulos_nivel2,
+  texto_breve_material_nivel2
     ]
   }
 }
