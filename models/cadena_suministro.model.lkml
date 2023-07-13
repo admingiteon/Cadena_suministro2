@@ -22,3 +22,4 @@ explore: lista_materiales_datos_generales {}
 explore: val_vw_recetas_fabricacion{} #Para validarrecetas de fabricación
 explore: vw_catalogo_materiales {}
 explore: val_vw_datos_inspeccion {}
+explore: val_vw_ordenes_proceso {}
