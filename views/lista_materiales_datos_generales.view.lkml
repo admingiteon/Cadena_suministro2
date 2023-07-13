@@ -3,7 +3,7 @@
 
 view: lista_materiales_datos_generales {
   derived_table: {
-    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_lista_materiales_de_datos_generales` LIMIT 10 ;;
+    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_lista_materiales_de_datos_generales`  ;;
   }
 
   measure: count {
@@ -24,7 +24,7 @@ view: lista_materiales_datos_generales {
   set: detail {
     fields: [
         material,
-	texto_breve_material
+  texto_breve_material
     ]
   }
 }
