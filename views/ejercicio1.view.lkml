@@ -101,7 +101,7 @@ view: ejercicio1 {
   dimension: mes_des_cor {
     type: string
     sql: ${TABLE}.mes_des_cor ;;
-    order_by_field: mes
+
   }
 
   dimension: sku {
