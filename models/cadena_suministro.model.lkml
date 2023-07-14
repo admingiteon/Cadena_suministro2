@@ -23,3 +23,4 @@ explore: val_vw_recetas_fabricacion{} #Para validarrecetas de fabricación
 explore: vw_catalogo_materiales {}
 explore: val_vw_datos_inspeccion {}
 explore: val_vw_ordenes_proceso {}
+explore: val_vw_pedidos_ventas {}
