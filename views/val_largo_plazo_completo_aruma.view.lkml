@@ -3,7 +3,7 @@
 
 view: val_largo_plazo_completo_aruma {
   derived_table: {
-    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.largo_plazo_completo` LIMIT 10 ;;
+    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.largo_plazo_completo`  ;;
   }
 
   measure: count {
@@ -30,8 +30,8 @@ view: val_largo_plazo_completo_aruma {
   set: detail {
     fields: [
         id_de_producto__ibp_,
-	fecha,
-	cantidad
+  fecha,
+  cantidad
     ]
   }
 }
