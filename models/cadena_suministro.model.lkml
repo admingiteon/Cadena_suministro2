@@ -24,3 +24,4 @@ explore: vw_catalogo_materiales {}
 explore: val_vw_datos_inspeccion {}
 explore: val_vw_ordenes_proceso {}
 explore: val_vw_pedidos_ventas {}
+explore: val_vw_recursos_capacidades {}
