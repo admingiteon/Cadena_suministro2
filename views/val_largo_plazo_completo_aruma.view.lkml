@@ -18,7 +18,7 @@ view: val_largo_plazo_completo_aruma {
 
   dimension: SKU {
     type: string
-    sql: concat("000000000000", ${TABLE}.ID_de_Producto__IBP_)
+    sql: concat("00000000000", ${TABLE}.ID_de_Producto__IBP_)
 
     ;;
   }
