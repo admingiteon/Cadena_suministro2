@@ -29,7 +29,13 @@ view: val_largo_plazo_completo_aruma {
 
   dimension: Periodomes {
     type: string
-    sql: extract(month from ${TABLE}.fecha);;
+    sql: Case (when extract(month from ${TABLE}.fecha) = '1' then 'Ene' else 'Error'
+
+
+
+
+
+    ;;
 
     }
 
