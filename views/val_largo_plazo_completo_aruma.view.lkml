@@ -16,6 +16,12 @@ view: val_largo_plazo_completo_aruma {
     sql: ${TABLE}.ID_de_Producto__IBP_ ;;
   }
 
+  dimension: SKU {
+    type: string
+    sql: ${TABLE}.ID_de_Producto__IBP_ ;;
+  }
+
+
   dimension: fecha {
     type: date
     datatype: date
