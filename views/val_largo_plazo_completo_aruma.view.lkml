@@ -47,8 +47,8 @@ view: val_largo_plazo_completo_aruma {
                      'Error'
                 end
                 )
-         order: val_largo_plazo_completo_aruma.fecha
     ;;
+    order_by_field: val_largo_plazo_completo_aruma.fecha
     }
 
   set: detail {
