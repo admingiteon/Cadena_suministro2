@@ -27,6 +27,13 @@ view: val_largo_plazo_completo_aruma {
     sql: ${TABLE}.Cantidad ;;
   }
 
+
+  dimension: Periodomes {
+    type: string
+    sql: extract(month from ${TABLE}.fecha);;
+
+    }
+
   set: detail {
     fields: [
         id_de_producto__ibp_,
