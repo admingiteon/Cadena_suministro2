@@ -1,7 +1,7 @@
 #X# Conversion failed: failed to parse YAML.  Check for pipes on newlines
 
 
-view: plp_001_trazabilidad {
+view: plp_trazabilidad_001 {
   derived_table: {
     sql: DECLARE PeriodoCross STRING;
       SET PeriodoCross = (
@@ -16,8 +16,7 @@ view: plp_001_trazabilidad {
                     concat('00000000000',ID_de_Producto__IBP_) as SKU,
                     Grupo_de_Articulos__dato_maestro_ as Grupoarticulos,
                     Grupo_de_Articulos_Externo__dato_maestro_ as Grupoarticulosexterno,
-                    1 as Id_concepto,
-                    'Plan de la demanda' As Concepto,
+
                     Cantidad,
                     PeriodoNum
               FROM `psa-sga-dfn-qa.reporting_ecc_mx.pla_de_demanda_01`
@@ -58,16 +57,6 @@ view: plp_001_trazabilidad {
   dimension: grupoarticulosexterno {
     type: string
     sql: ${TABLE}.Grupoarticulosexterno ;;
-  }
-
-  dimension: id_concepto {
-    type: number
-    sql: ${TABLE}.Id_concepto ;;
-  }
-
-  dimension: concepto {
-    type: string
-    sql: ${TABLE}.Concepto ;;
   }
 
   dimension: __2023jun {
@@ -198,37 +187,35 @@ view: plp_001_trazabilidad {
   set: detail {
     fields: [
         planta,
-  mercadopriori,
-  sku,
-  grupoarticulos,
-  grupoarticulosexterno,
-  id_concepto,
-  concepto,
-  __2023jun,
-  __2023jul,
-  __2023ago,
-  __2023sep,
-  __2023oct,
-  __2023nov,
-  __2023dic,
-  __2024ene,
-  __2024feb,
-  __2024mar,
-  __2024abr,
-  __2024may,
-  __2024jun,
-  __2024jul,
-  __2024ago,
-  __2024sep,
-  __2024oct,
-  __2024nov,
-  __2024dic,
-  __2025ene,
-  __2025feb,
-  __2025mar,
-  __2025abr,
-  __2025may,
-  __2025jun
+	mercadopriori,
+	sku,
+	grupoarticulos,
+	grupoarticulosexterno,
+	__2023jun,
+	__2023jul,
+	__2023ago,
+	__2023sep,
+	__2023oct,
+	__2023nov,
+	__2023dic,
+	__2024ene,
+	__2024feb,
+	__2024mar,
+	__2024abr,
+	__2024may,
+	__2024jun,
+	__2024jul,
+	__2024ago,
+	__2024sep,
+	__2024oct,
+	__2024nov,
+	__2024dic,
+	__2025ene,
+	__2025feb,
+	__2025mar,
+	__2025abr,
+	__2025may,
+	__2025jun
     ]
   }
 }
