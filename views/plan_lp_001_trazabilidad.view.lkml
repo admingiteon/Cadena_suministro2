@@ -1,20 +1,20 @@
 #X# Conversion failed: failed to parse YAML.  Check for pipes on newlines
 
 
-view: plan_lp_001_trazabilidad {
+view: corregido {
   derived_table: {
     sql: SELECT 1 id_Concepto,
-             'PLAN DE LA DEMANDA' as Concepto,
-             ID_de_Sociedad__IBP_ As Planta,
-             ID_de_Planta__IBP_  as mercadopriori ,
-             concat('00000000000',ID_de_Producto__IBP_) as SKU,
-             Grupo_de_Articulos__dato_maestro_ as Grupoarticulos,
-             Grupo_de_Articulos_Externo__dato_maestro_ as Grupoarticulosexterno,
-             PeriodoNum,
-             Periodo,
-             Cantidad
-       FROM `psa-sga-dfn-qa.reporting_ecc_mx.pla_de_demanda_01`
-      WHERE PeriodoNum IS NOT null  ;;
+                     'PLAN DE LA DEMANDA' as Concepto,
+                     ID_de_Sociedad__IBP_ As Planta,
+                     ID_de_Planta__IBP_  as Mercado_Prioritario ,
+                     concat('00000000000',ID_de_Producto__IBP_) as SKU,
+                     Grupo_de_Articulos__dato_maestro_ as Grupo_Articulos,
+                     Grupo_de_Articulos_Externo__dato_maestro_ as Grupo_Articulos_Externo,
+                     PeriodoNum,
+                     Periodo,
+                     Cantidad
+             FROM `psa-sga-dfn-qa.reporting_ecc_mx.pla_de_demanda_01`
+            WHERE PeriodoNum IS NOT null LIMIT 10 ;;
   }
 
   measure: count {
@@ -37,9 +37,9 @@ view: plan_lp_001_trazabilidad {
     sql: ${TABLE}.Planta ;;
   }
 
-  dimension: mercadopriori {
+  dimension: mercado_prioritario {
     type: string
-    sql: ${TABLE}.mercadopriori ;;
+    sql: ${TABLE}.Mercado_Prioritario ;;
   }
 
   dimension: sku {
@@ -47,14 +47,14 @@ view: plan_lp_001_trazabilidad {
     sql: ${TABLE}.SKU ;;
   }
 
-  dimension: grupoarticulos {
+  dimension: grupo_articulos {
     type: string
-    sql: ${TABLE}.Grupoarticulos ;;
+    sql: ${TABLE}.Grupo_Articulos ;;
   }
 
-  dimension: grupoarticulosexterno {
+  dimension: grupo_articulos_externo {
     type: string
-    sql: ${TABLE}.Grupoarticulosexterno ;;
+    sql: ${TABLE}.Grupo_Articulos_Externo ;;
   }
 
   dimension: periodo_num {
@@ -75,15 +75,15 @@ view: plan_lp_001_trazabilidad {
   set: detail {
     fields: [
         id_concepto,
-  concepto,
-  planta,
-  mercadopriori,
-  sku,
-  grupoarticulos,
-  grupoarticulosexterno,
-  periodo_num,
-  periodo,
-  cantidad
+	concepto,
+	planta,
+	mercado_prioritario,
+	sku,
+	grupo_articulos,
+	grupo_articulos_externo,
+	periodo_num,
+	periodo,
+	cantidad
     ]
   }
 }

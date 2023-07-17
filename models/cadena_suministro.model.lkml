@@ -26,4 +26,3 @@ explore: val_vw_ordenes_proceso {}
 explore: val_vw_pedidos_ventas {}
 explore: val_vw_recursos_capacidades {}
 explore: val_largo_plazo_completo_aruma {}
-explore: plan_lp_001_trazabilidad {}
