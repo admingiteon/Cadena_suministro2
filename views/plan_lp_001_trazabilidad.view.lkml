@@ -14,7 +14,7 @@ view: plan_lp_001_trazabilidad {
              Periodo,
              Cantidad
        FROM `psa-sga-dfn-qa.reporting_ecc_mx.pla_de_demanda_01`
-      WHERE PeriodoNum IS NOT null LIMIT 10 ;;
+      WHERE PeriodoNum IS NOT null  ;;
   }
 
   measure: count {
@@ -75,15 +75,15 @@ view: plan_lp_001_trazabilidad {
   set: detail {
     fields: [
         id_concepto,
-	concepto,
-	planta,
-	mercadopriori,
-	sku,
-	grupoarticulos,
-	grupoarticulosexterno,
-	periodo_num,
-	periodo,
-	cantidad
+  concepto,
+  planta,
+  mercadopriori,
+  sku,
+  grupoarticulos,
+  grupoarticulosexterno,
+  periodo_num,
+  periodo,
+  cantidad
     ]
   }
 }
