@@ -1,7 +1,7 @@
 #X# Conversion failed: failed to parse YAML.  Check for pipes on newlines
 
 
-view: corregido {
+view: plan_lp_001_trazabilidad {
   derived_table: {
     sql: SELECT 1 id_Concepto,
                      'PLAN DE LA DEMANDA' as Concepto,
@@ -75,15 +75,15 @@ view: corregido {
   set: detail {
     fields: [
         id_concepto,
-	concepto,
-	planta,
-	mercado_prioritario,
-	sku,
-	grupo_articulos,
-	grupo_articulos_externo,
-	periodo_num,
-	periodo,
-	cantidad
+  concepto,
+  planta,
+  mercado_prioritario,
+  sku,
+  grupo_articulos,
+  grupo_articulos_externo,
+  periodo_num,
+  periodo,
+  cantidad
     ]
   }
 }
