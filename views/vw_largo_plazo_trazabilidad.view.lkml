@@ -26,6 +26,7 @@ view: vw_largo_plazo_trazabilidad {
     sql: ${TABLE}.SKU ;;
   }
 
+
   dimension: periodo_num {
     type: string
     sql: ${TABLE}.PeriodoNum ;;
