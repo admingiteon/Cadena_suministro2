@@ -3,7 +3,48 @@
 
 view: vw_largo_plazo_trazabilidad {
   derived_table: {
-    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_Largo_Plazo_Traza`  ;;
+    sql: SELECT 1 id_Concepto,
+             'PLAN DE LA DEMANDA' as Concepto,
+              ListaSKU.sku,
+              PeriodoNum,
+              Periodo,
+              sum(Cantidad) as Cantidad
+         FROM psa-sga-dfn-qa.reporting_ecc_mx.tb_cat_sku As ListaSKU
+         left outer join
+              `psa-sga-dfn-qa.reporting_ecc_mx.pla_de_demanda_01` as PlanDemanda
+           on  ListaSKU.sku=concat('00000000000',PlanDemanda.ID_de_Producto__IBP_)
+         where ID_de_Producto__IBP_>=4000000
+         group by 1,2,3,4,5
+
+      union all
+
+      SELECT 2 id_Concepto,
+             'PLAN DE LA DEMANDA SIMULADO' as Concepto,
+              ListaSKU.sku,
+              PeriodoNum,
+              Periodo,
+              0 as Cantidad
+         FROM psa-sga-dfn-qa.reporting_ecc_mx.tb_cat_sku As ListaSKU
+         left outer join
+              `psa-sga-dfn-qa.reporting_ecc_mx.pla_de_demanda_01` as PlanDemanda
+           on  ListaSKU.sku=concat('00000000000',PlanDemanda.ID_de_Producto__IBP_)
+        where ID_de_Producto__IBP_>=4000000
+        group by 1,2,3,4,5
+
+      union all
+
+      SELECT 3 id_Concepto,
+             'VARIACION PLAN DE LA DEMANDA' as Concepto,
+              ListaSKU.sku,
+              PeriodoNum,
+              Periodo,
+              0 as Cantidad
+          FROM psa-sga-dfn-qa.reporting_ecc_mx.tb_cat_sku As ListaSKU
+         left outer join
+              `psa-sga-dfn-qa.reporting_ecc_mx.pla_de_demanda_01` as PlanDemanda
+           on  ListaSKU.sku=concat('00000000000',PlanDemanda.ID_de_Producto__IBP_)
+         where ID_de_Producto__IBP_>=4000000
+         group by 1,2,3,4,5 ;;
   }
 
   measure: count {
@@ -23,9 +64,8 @@ view: vw_largo_plazo_trazabilidad {
 
   dimension: sku {
     type: string
-    sql: ${TABLE}.SKU ;;
+    sql: ${TABLE}.sku ;;
   }
-
 
   dimension: periodo_num {
     type: string
@@ -45,11 +85,11 @@ view: vw_largo_plazo_trazabilidad {
   set: detail {
     fields: [
         id_concepto,
-  concepto,
-  sku,
-  periodo_num,
-  periodo,
-  cantidad
+	concepto,
+	sku,
+	periodo_num,
+	periodo,
+	cantidad
     ]
   }
 }
