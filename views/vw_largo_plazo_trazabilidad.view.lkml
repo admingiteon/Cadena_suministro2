@@ -27,21 +27,29 @@ view: vw_largo_plazo_trazabilidad {
 
         union all
 
-     SELECT 3 id_Concepto,
-             'VARIACION PLAN DE LA DEMANDA' as Concepto,
-              concat('00000000000',ID_de_Producto__IBP_) as SKU,
-              CONCAT(CAST(EXTRACT(YEAR from calculado.fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from calculado.fecha ) as string),2,'0') ) as PeriodoNum,
-              CONCAT(CAST(EXTRACT(YEAR from calculado.fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from calculado.fecha ) as string),2,'0') ) as Periodo,
-              (sum(calculado.Cantidad)-sum(CantidadMes*1.16)) as Cantidad
-       FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cad_sum_cap_web_vert` As simulado
-       left outer join `psa-sga-dfn-qa.reporting_ecc_mx.largo_plazo_completo` As calculado
-         on concat('00000000000',ID_de_Producto__IBP_)
-            =simulado.sku
-        and CONCAT(CAST(EXTRACT(YEAR from calculado.fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from calculado.fecha ) as string),2,'0') )
-            =concat(simulado.sku,simulado.periodoproy)
-      where substring(simulado.sku,12,2)='40'
-        and calculado.ID_de_Producto__IBP_>=4000000
-     group by 1,2,3,4,5
+
+     SELECT 3 as id_Concepto,
+                'VARIACION PLAN DE LA DEMANDA'  as Concepto,
+                concat('00000000000',ID_de_Producto__IBP_) as SKU,
+                CONCAT(CAST(EXTRACT(YEAR from fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from fecha ) as string),2,'0') ) as PeriodoNum,
+                CONCAT(CAST(EXTRACT(YEAR from fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from fecha ) as string),2,'0') ) as Periodo,
+                sum(Cantidad) as Cantidad
+          FROM `psa-sga-dfn-qa.reporting_ecc_mx.largo_plazo_completo`
+         where ID_de_Producto__IBP_>=4000000
+         group by 1,2,3,4,5
+
+         union all
+
+        SELECT 3 as id_Concepto,
+               'VARIACION PLAN DE LA DEMANDA'  as Concepto,
+               SKU as sku,
+               periodoproy as PeriodoNum,
+               periodoproy as Periodo,
+               sum(CantidadMes*(-1.16)) as Cantidad
+          FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cad_sum_cap_web_vert`
+       where substring(sku,12,2)='40'
+       group by 1,2,3,4,5
+
 
 
 
