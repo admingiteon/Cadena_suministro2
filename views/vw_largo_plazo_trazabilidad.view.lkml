@@ -3,24 +3,25 @@
 
 view: vw_largo_plazo_trazabilidad {
   derived_table: {
-    sql: SELECT 1 id_Concepto,
+    sql: SELECT 1 as id_Concepto,
                 'PLAN DE LA DEMANDA' as Concepto,
                 concat('00000000000',ID_de_Producto__IBP_) as SKU,
-                PeriodoNum,
-                Periodo,
+                CONCAT(CAST(EXTRACT(YEAR from fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from fecha ) as string),2,'0') ) as PeriodoNum,
+                CONCAT(CAST(EXTRACT(YEAR from fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from fecha ) as string),2,'0') ) as Periodo,
                 sum(Cantidad) as Cantidad
-          FROM `psa-sga-dfn-qa.reporting_ecc_mx.largo_plazo_completo` Limit 1000
+          FROM `psa-sga-dfn-qa.reporting_ecc_mx.largo_plazo_completo`
          where ID_de_Producto__IBP_>=4000000
          group by 1,2,3,4,5
+
          union all
 
-        SELECT 2 id_Concepto,
+        SELECT 2 as id_Concepto,
                'PLAN DE LA DEMANDA SIMULADO' as Concepto,
                SKU as sku,
-               CONCAT(CAST(EXTRACT(YEAR from fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from fecha ) as string),2,'0') ) as PeriodoNum,
-               CONCAT(CAST(EXTRACT(YEAR from fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from fecha ) as string),2,'0') ) as Periodo,
+               periodoproy as PeriodoNum,
+               periodoproy as Periodo,
                sum(CantidadMes) as Cantidad
-          FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cad_sum_cap_web_vert` Limit 1000
+          FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cad_sum_cap_web_vert`
        where substring(sku,12,2)='40'
        group by 1,2,3,4,5
 
