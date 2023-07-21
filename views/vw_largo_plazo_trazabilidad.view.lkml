@@ -33,7 +33,7 @@ view: vw_largo_plazo_trazabilidad {
                 concat('00000000000',ID_de_Producto__IBP_) as SKU,
                 CONCAT(CAST(EXTRACT(YEAR from fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from fecha ) as string),2,'0') ) as PeriodoNum,
                 CONCAT(CAST(EXTRACT(YEAR from fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from fecha ) as string),2,'0') ) as Periodo,
-                sum(Cantidad) as Cantidad
+                sum(Cantidad*(-1)) as Cantidad
           FROM `psa-sga-dfn-qa.reporting_ecc_mx.largo_plazo_completo`
          where ID_de_Producto__IBP_>=4000000
          group by 1,2,3,4,5
@@ -45,7 +45,7 @@ view: vw_largo_plazo_trazabilidad {
                SKU as sku,
                periodoproy as PeriodoNum,
                periodoproy as Periodo,
-               sum(CantidadMes*(-1.16)) as Cantidad
+               sum(CantidadMes*(1.16)) as Cantidad
           FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cad_sum_cap_web_vert`
        where substring(sku,12,2)='40'
        group by 1,2,3,4,5
