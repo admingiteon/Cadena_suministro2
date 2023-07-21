@@ -32,15 +32,17 @@ view: vw_largo_plazo_trazabilidad {
               concat('00000000000',ID_de_Producto__IBP_) as SKU,
               CONCAT(CAST(EXTRACT(YEAR from calculado.fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from calculado.fecha ) as string),2,'0') ) as PeriodoNum,
               CONCAT(CAST(EXTRACT(YEAR from calculado.fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from calculado.fecha ) as string),2,'0') ) as Periodo,
-             sum((CantidadMes*1.16)-(calculado.Cantidad)) as Cantidad
+              (sum(calculado.Cantidad)-sum(CantidadMes*1.16)) as Cantidad
        FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cad_sum_cap_web_vert` As simulado
        left outer join `psa-sga-dfn-qa.reporting_ecc_mx.largo_plazo_completo` As calculado
-         on concat(concat('00000000000',ID_de_Producto__IBP_),
-            CONCAT(CAST(EXTRACT(YEAR from calculado.fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from calculado.fecha ) as string),2,'0') ))
-          = concat(simulado.sku,simulado.periodoproy)
+         on concat('00000000000',ID_de_Producto__IBP_)
+            =simulado.sku
+        and CONCAT(CAST(EXTRACT(YEAR from calculado.fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from calculado.fecha ) as string),2,'0') )
+            =concat(simulado.sku,simulado.periodoproy)
       where substring(simulado.sku,12,2)='40'
         and calculado.ID_de_Producto__IBP_>=4000000
      group by 1,2,3,4,5
+
 
 
       ;;
