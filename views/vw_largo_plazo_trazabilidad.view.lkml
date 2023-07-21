@@ -4,7 +4,7 @@
 view: vw_largo_plazo_trazabilidad {
   derived_table: {
     sql: SELECT 1 as id_Concepto,
-                'PLAN DE LA DEMANDA' as Concepto,
+                'PLAN DEMANDA' as Concepto,
                 concat('00000000000',ID_de_Producto__IBP_) as SKU,
                 CONCAT(CAST(EXTRACT(YEAR from fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from fecha ) as string),2,'0') ) as PeriodoNum,
                 CONCAT(CAST(EXTRACT(YEAR from fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from fecha ) as string),2,'0') ) as Periodo,
@@ -16,7 +16,7 @@ view: vw_largo_plazo_trazabilidad {
          union all
 
         SELECT 2 as id_Concepto,
-               'PLAN DE LA DEMANDA SIMULADO' as Concepto,
+               'PLAN DEMANDA SIMULADO' as Concepto,
                SKU as sku,
                periodoproy as PeriodoNum,
                periodoproy as Periodo,
@@ -29,7 +29,7 @@ view: vw_largo_plazo_trazabilidad {
 
 
      SELECT 3 as id_Concepto,
-                'VARIACION PLAN DE LA DEMANDA'  as Concepto,
+                'VARIACION PLAN DEMANDA'  as Concepto,
                 concat('00000000000',ID_de_Producto__IBP_) as SKU,
                 CONCAT(CAST(EXTRACT(YEAR from fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from fecha ) as string),2,'0') ) as PeriodoNum,
                 CONCAT(CAST(EXTRACT(YEAR from fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from fecha ) as string),2,'0') ) as Periodo,
@@ -41,7 +41,7 @@ view: vw_largo_plazo_trazabilidad {
          union all
 
         SELECT 3 as id_Concepto,
-               'VARIACION PLAN DE LA DEMANDA'  as Concepto,
+               'VARIACION PLAN DEMANDA'  as Concepto,
                SKU as sku,
                periodoproy as PeriodoNum,
                periodoproy as Periodo,
