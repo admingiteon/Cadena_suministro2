@@ -25,6 +25,8 @@ view: vw_largo_plazo_trazabilidad {
        where substring(sku,12,2)='40'
        group by 1,2,3,4,5
 
+        union all
+
      SELECT 3 id_Concepto,
              'VARIACION PLAN DE LA DEMANDA' as Concepto,
               calculado.ID_de_Producto__IBP_,
