@@ -29,7 +29,7 @@ view: vw_largo_plazo_trazabilidad {
 
      SELECT 3 id_Concepto,
              'VARIACION PLAN DE LA DEMANDA' as Concepto,
-              calculado.ID_de_Producto__IBP_,
+              concat('00000000000',ID_de_Producto__IBP_) as SKU,
               CONCAT(CAST(EXTRACT(YEAR from calculado.fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from calculado.fecha ) as string),2,'0') ) as PeriodoNum,
               CONCAT(CAST(EXTRACT(YEAR from calculado.fecha ) as string),'-', LPAD(CAST(EXTRACT(MONTH from calculado.fecha ) as string),2,'0') ) as Periodo,
               (sum(calculado.Cantidad)-sum(CantidadMes*1.16)) as Cantidad
