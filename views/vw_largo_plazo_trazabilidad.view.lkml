@@ -25,6 +25,21 @@ view: vw_largo_plazo_trazabilidad {
        where substring(sku,12,2)='40'
        group by 1,2,3,4,5
 
+      SELECT 3 id_Concepto,
+             'VARIACION PLAN DE LA DEMANDA' as Concepto,
+              calculado.SKU as sku,
+              calculado.PeriodoProy as PeriodoNum,
+              calculado.PeriodoProy as Periodo,
+              (sum(calculado.CantidadMes*1.16)-sum(cantidad)) as Cantidad
+       FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cad_sum_cap_web_vert` As simulado
+       left outer join `psa-sga-dfn-qa.reporting_ecc_mx.vw_cad_sum_cap_web_vert` As Calculado
+         on concat(Calculado.sku,Calculado.periodoproy)=concat(simulado.sku,simulado.periodoproy)
+      where substring(calculado.sku,12,2)='40'
+        and ID_de_Producto__IBP_>=4000000
+
+   group by 1,2,3,4,5
+
+
       ;;
   }
 
