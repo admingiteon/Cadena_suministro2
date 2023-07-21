@@ -50,7 +50,17 @@ view: vw_largo_plazo_trazabilidad {
        where substring(sku,12,2)='40'
        group by 1,2,3,4,5
 
+       union all
 
+      SELECT 4 as id_Concepto,
+               '%'  as Concepto,
+               SKU as sku,
+               periodoproy as PeriodoNum,
+               periodoproy as Periodo,
+               16 as Cantidad
+          FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cad_sum_cap_web_vert`
+       where substring(sku,12,2)='40'
+       group by 1,2,3,4,5
 
 
       ;;
