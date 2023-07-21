@@ -58,6 +58,8 @@ view: vw_largo_plazo_trazabilidad {
     sql: ${TABLE}.Periodo ;;
   }
 
+
+
   dimension: cantidad {
     type: number
     value_format:"#.00;(#.00)"
