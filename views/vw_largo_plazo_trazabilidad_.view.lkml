@@ -47,7 +47,7 @@ dimension: cantidad {
   type: number
   sql: ${TABLE}.Cantidad
 
-  value_format: [type=‘count’]0;[type=‘amount’]$0.00;0.00%
+  value_format: [type=‘count’]0;[type=‘amount’]$0.00;0.00
  ;;
 
 }
