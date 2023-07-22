@@ -1,7 +1,7 @@
 #X# Conversion failed: failed to parse YAML.  Check for pipes on newlines
 
 
-view: vw_largo_plazo_trazabilidad {
+view: prueba2 {
   derived_table: {
     sql: CREATE TEMPORARY TABLE PlanDemanda As
             SELECT 1 as id_Concepto,
@@ -82,11 +82,11 @@ view: vw_largo_plazo_trazabilidad {
   set: detail {
     fields: [
         id_concepto,
-  concepto,
-  sku,
-  periodo_num,
-  periodo,
-  cantidad
+	concepto,
+	sku,
+	periodo_num,
+	periodo,
+	cantidad
     ]
   }
 }
