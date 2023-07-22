@@ -47,7 +47,17 @@ dimension: cantidad {
   type: number
   sql: ${TABLE}.Cantidad
 
-  value_format: [type=‘count’]0;[type=‘amount’]$0.00;0.00
+
+  dimension: cantidad {
+    type: number
+    sql: ${TABLE}.Cantidad
+
+        Case
+            when  ${TABLE}.id_Concepto=4
+            then value_format: "0,000.0000"
+            else value_format: "0,000"
+        end
+
  ;;
 
 }
