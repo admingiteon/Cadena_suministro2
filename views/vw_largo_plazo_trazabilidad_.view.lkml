@@ -6,6 +6,7 @@ derived_table: {
   sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_tablero_largo_plazo_trazab_renglon_01` ;;
 }
 
+
 measure: count {
   type: count
   drill_fields: [detail*]
