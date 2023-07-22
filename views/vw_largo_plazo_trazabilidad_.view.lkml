@@ -3,9 +3,10 @@
 
 view: vw_largo_plazo_trazabilidad {
 derived_table: {
-  sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_tablero_largo_plazo_trazab_renglon_01` ;;
+  sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_tablero_largo_plazo_trazab_renglon_01`
+      union all
+      SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_tablero_largo_plazo_trazab_renglon_02` ;;
 }
-
 
 measure: count {
   type: count
