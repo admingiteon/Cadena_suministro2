@@ -51,15 +51,8 @@ dimension: cantidad {
   dimension: cantidad {
     type: number
     sql: ${TABLE}.Cantidad
-
-        Case
-            when  ${TABLE}.id_Concepto=4
-            then value_format: "0,000.0000"
-            else value_format: "0,000"
-        end
-
  ;;
-
+  value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
 }
 
 set: detail {
