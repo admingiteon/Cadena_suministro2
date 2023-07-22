@@ -28,4 +28,3 @@ explore: val_vw_recursos_capacidades {}
 explore: val_largo_plazo_completo_aruma {}
 explore: plan_lp_001_trazabilidad {}
 explore: vw_largo_plazo_trazabilidad {}
-explore: vw_tab_lar_pla_traz_ren1 {}
