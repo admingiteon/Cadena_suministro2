@@ -46,7 +46,7 @@ dimension: periodo {
 dimension: cantidad {
   type: number
   sql: ${TABLE}.Cantidad ;;
-  value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
+  value_format: "[=4]0.00%,,\"M\";[>=1000]0.00,\"K\";0.00"
 }
 
 
