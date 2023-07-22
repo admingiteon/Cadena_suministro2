@@ -47,7 +47,7 @@ dimension: cantidad {
   type: number
   sql: ${TABLE}.Cantidad
 
-
+}
   dimension: cantidad {
     type: number
     sql: ${TABLE}.Cantidad
