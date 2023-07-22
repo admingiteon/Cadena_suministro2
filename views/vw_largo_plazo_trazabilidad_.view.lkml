@@ -45,15 +45,11 @@ dimension: periodo {
 
 dimension: cantidad {
   type: number
-  sql: ${TABLE}.Cantidad
-
-}
-  dimension: cantidad {
-    type: number
-    sql: ${TABLE}.Cantidad
- ;;
+  sql: ${TABLE}.Cantidad ;;
   value_format: "[>=1000000]$0.00,,\"M\";[>=1000]$0.00,\"K\";$0.00"
 }
+
+
 
 set: detail {
   fields: [
