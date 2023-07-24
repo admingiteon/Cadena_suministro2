@@ -3,7 +3,7 @@
 
 view: vw_tablero_largo_plazo_trazab_renglon_05 {
   derived_table: {
-    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_tablero_largo_plazo_trazab_renglon_05` ;;
+    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_tablero_largo_plazo_trazab_renglon_05` where substring(sku,12,2)='40' ;;
   }
   measure: count {
     type: count
