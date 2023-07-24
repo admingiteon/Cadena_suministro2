@@ -5,7 +5,6 @@ view: vw_tablero_largo_plazo_trazab_renglon_05 {
   derived_table: {
     sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_tablero_largo_plazo_trazab_renglon_05` ;;
   }
-
   measure: count {
     type: count
     drill_fields: [detail*]
@@ -44,11 +43,11 @@ view: vw_tablero_largo_plazo_trazab_renglon_05 {
   set: detail {
     fields: [
         id_concepto,
-	concepto,
-	sku,
-	periodo_num,
-	periodo,
-	cantidad
+  concepto,
+  sku,
+  periodo_num,
+  periodo,
+  cantidad
     ]
   }
 }
