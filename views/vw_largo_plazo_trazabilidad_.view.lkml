@@ -27,7 +27,7 @@ derived_table: {
               SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_tablero_largo_plazo_trazab_renglon_08`
       ) As renglones
       left outer join `psa-sga-dfn-qa.reporting_ecc_mx.vw_cadena_suministro_textos_materiales` As materiales
-      on renglones.sku=materiales.material
+      on renglones.sku=materiales.num_material
       ;;
 }
 
