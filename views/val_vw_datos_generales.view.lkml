@@ -6,7 +6,7 @@ view: val_vw_datos_generales {
     drill_fields: [num_reserva]
   }
   derived_table: {
-    sql: SELECT *,'0' as pos_reserva FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cadena_suministro_datos_generales`  ;;
+    sql: SELECT *,'0' as pos_reserva, '0' as num_reservaFROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cadena_suministro_datos_generales`  ;;
   }
 
  ## measure: count {
