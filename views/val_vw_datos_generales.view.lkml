@@ -10,7 +10,8 @@ view: val_vw_datos_generales {
                   '0' as num_reserva,
                   '0' as salidad_final,
                   '0' as pos_borrada,
-                  '//' as fecha_necesidad
+                  '//' as fecha_necesidad,
+                  0 as cantidad_necesaria_tot
           FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_cadena_suministro_datos_generales`  ;;
   }
 
