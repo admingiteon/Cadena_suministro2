@@ -1,55 +1,90 @@
+#X# Conversion failed: failed to parse YAML.  Check for pipes on newlines
+
+
 view: vw_largo_plazo_trazabilidad {
-  sql_table_name: `psa-psa-cadena-qa.reporting_ecc_mx.vw_largo_plazo_trazabilidad` ;;
+  derived_table: {
+    sql: SELECT * FROM `psa-psa-cadena-qa.reporting_ecc_mx.vw_largo_plazo_trazabilidad`;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: [detail*]
+  }
+
+  dimension: tipomaterial {
+    type: string
+    sql: ${TABLE}.tipomaterial ;;
+  }
+
+  dimension: um {
+    type: string
+    sql: ${TABLE}.um ;;
+  }
+
+  dimension: grupoarticulo {
+    type: string
+    sql: ${TABLE}.grupoarticulo ;;
+  }
+
+  dimension: grupoarticuloexterno {
+    type: string
+    sql: ${TABLE}.grupoarticuloexterno ;;
+  }
+
+  dimension: claveidioma {
+    type: string
+    sql: ${TABLE}.claveidioma ;;
+  }
 
   dimension: articulodescribe {
     type: string
     sql: ${TABLE}.articulodescribe ;;
   }
-  dimension: cantidad {
-    type: number
-    sql: ${TABLE}.Cantidad ;;
-  }
-  dimension: claveidioma {
-    type: string
-    sql: ${TABLE}.claveidioma ;;
-  }
-  dimension: concepto {
-    type: string
-    sql: ${TABLE}.Concepto ;;
-  }
-  dimension: grupoarticulo {
-    type: string
-    sql: ${TABLE}.grupoarticulo ;;
-  }
-  dimension: grupoarticuloexterno {
-    type: string
-    sql: ${TABLE}.grupoarticuloexterno ;;
-  }
+
   dimension: id_concepto {
     type: number
     sql: ${TABLE}.id_Concepto ;;
   }
-  dimension: periodo {
+
+  dimension: concepto {
     type: string
-    sql: ${TABLE}.Periodo ;;
+    sql: ${TABLE}.Concepto ;;
   }
-  dimension: periodo_num {
-    type: string
-    sql: ${TABLE}.PeriodoNum ;;
-  }
+
   dimension: sku {
     type: string
     sql: ${TABLE}.SKU ;;
   }
-  dimension: tipomaterial {
+
+  dimension: periodo_num {
     type: string
-    sql: ${TABLE}.tipomaterial ;;
+    sql: ${TABLE}.PeriodoNum ;;
   }
-  dimension: um {
+
+  dimension: periodo {
     type: string
-    sql: ${TABLE}.um ;;
+    sql: ${TABLE}.Periodo ;;
   }
-  measure: count {
-    type: count
+
+  dimension: cantidad {
+    type: number
+    sql: ${TABLE}.Cantidad ;;
+  }
+
+  set: detail {
+    fields: [
+        tipomaterial,
+  um,
+  grupoarticulo,
+  grupoarticuloexterno,
+  claveidioma,
+  articulodescribe,
+  id_concepto,
+  concepto,
+  sku,
+  periodo_num,
+  periodo,
+  cantidad
+    ]
   }
 }
