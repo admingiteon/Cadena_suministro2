@@ -3,7 +3,7 @@
 
 view: lista_materiales_datos_generales {
   derived_table: {
-    sql: SELECT * FROM `psa-sga-dfn-qa.reporting_ecc_mx.vw_lista_materiales_de_datos_generales`  ;;
+    sql: SELECT * FROM `psa-psa-cadena-qa.reporting_ecc_mx.vw_lista_materiales_de_datos_generales`  ;;
   }
 
   measure: count {

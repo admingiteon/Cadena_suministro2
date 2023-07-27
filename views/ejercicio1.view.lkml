@@ -4,7 +4,7 @@
 view: ejercicio1 {
   derived_table: {
     sql: SELECT *
-           FROM `psa-sga-dfn-qa.reporting_ecc_mx.pla_de_demanda_01`
+           FROM `psa-psa-cadena-qa.reporting_ecc_mx.pla_de_demanda_01`
           order by ejercicio asc, mes asc;;
   }
 
