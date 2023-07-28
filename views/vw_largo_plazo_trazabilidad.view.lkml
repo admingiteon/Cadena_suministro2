@@ -56,10 +56,6 @@ view: vw_largo_plazo_trazabilidad {
     sql: ${TABLE}.SKU ;;
   }
 
-  dimension: drill01 {
-    type: string
-    sql: ${TABLE}.drill01 ;;
-  }
 
 
 
@@ -89,7 +85,7 @@ view: vw_largo_plazo_trazabilidad {
   id_concepto,
   concepto,
   sku,
-  drill01,
+
   periodo_num,
   periodo,
   cantidad
